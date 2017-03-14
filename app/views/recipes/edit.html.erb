@@ -1,0 +1,19 @@
+<h1> Edit Recipe </h1>
+
+<%= form_tag "/recipes/#{@recipe.id}", method: :patch do %>
+
+Name: <input type="text" value=" <%= @recipe.name %>" name= "form_name">  <br>
+
+Ingredients: <input type="text" value="<%= @recipe.ingredients %>" name= "form_ingredients"> <br>
+
+Duration: <input type="text" value=" <%= @recipe.duration %>" name= "form_duration"> <br>
+
+Author: <input type="text" value="<%= @recipe.author %>" name= "form_author"> <br>
+
+<input type="submit" value="Update recipe">
+<% end %>
+
+<%= form_tag "/recipes/#{@recipe.id}" , method: :delete do %>
+<input type="Submit" value="Destroy product">
+<% end %>
+
