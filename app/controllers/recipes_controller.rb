@@ -19,8 +19,10 @@ class RecipesController < ApplicationController
       name: params[:form_name], 
       ingredients: params[:form_ingredients], 
       duration: params[:form_duration], 
-      author: params[:form_auhtor]
+      author: params[:form_auhtor],
+      image: params[:form_image]
     )
+    p @recipe
     @recipe.save
     flash[:success] = "Recipe successfully created!"
     redirect_to "/recipes/#{recipe.id}"
@@ -38,7 +40,8 @@ class RecipesController < ApplicationController
     @recipe.name = params[:form_name] 
     @recipe.ingredients= params[:form_ingredients] 
     @recipe.duration= params[:form_duration] 
-    @recipe.author= params[:form_auhtor]
+    @recipe.author= params[:form_author]
+    @recipe.image= params[:form_image]
     @recipe.save
     flash[:success] = "Recipe successfully updated!"
     redirect_to "/recipes/#{@recipe.id}"
